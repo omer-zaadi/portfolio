@@ -13,7 +13,7 @@ const contactLinks = [
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.9 19.79 19.79 0 0 1 1.61 3.22 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.12.98.32 1.94.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.87.38 1.83.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg> },
   { href: contact.linkedin, label: "LinkedIn", value: "linkedin.com/in/omer-zaadi", target: "_blank",
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> },
-  { href: contact.github, label: "GitHub", value: "github.com/omer-zaadi", target: "_blank",
+  { href: contact.github, label: "GitHub", value: "github.com/YOUR_GITHUB", target: "_blank",
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> },
 ];
 
@@ -367,25 +367,25 @@ export default function SinglePage() {
       <LiveBackground />
 
       {/* ══════════════ HOME ══════════════ */}
-      <section id="home" className="relative z-10 min-h-screen flex items-center px-16 pt-28 pb-16">
-        <div className="w-full grid grid-cols-2 gap-16 items-center">
+      <section id="home" className="relative z-10 min-h-screen flex items-center px-6 md:px-16 pt-24 pb-12">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
 
           {/* LEFT: name + text */}
           <div>
-            <p className="animate-fade-up flex items-center gap-3 font-mono text-[11px] text-[#d4a853] tracking-[0.16em] uppercase mb-6 before:content-[''] before:block before:w-8 before:h-px before:bg-[#d4a853]">
+            <p className="animate-fade-up flex items-center gap-3 font-mono text-[11px] text-[#d4a853] tracking-[0.16em] uppercase mb-5 before:content-[''] before:block before:w-8 before:h-px before:bg-[#d4a853]">
               Available for opportunities
             </p>
-            <h1 className="animate-fade-up-1 font-serif leading-[0.92] tracking-[-0.03em] text-[#f0ede6] mb-5"
-              style={{ fontSize: "clamp(3.8rem,7.5vw,7.5rem)" }}>
+            <h1 className="animate-fade-up-1 font-serif leading-[0.92] tracking-[-0.03em] text-[#f0ede6] mb-4"
+              style={{ fontSize: "clamp(3.2rem,12vw,7.5rem)" }}>
               {name.split(" ")[0]}<br />
               <em className="not-italic text-[#d4a853]">{name.split(" ")[1]}</em>
             </h1>
-            <div className="animate-fade-up-1 flex items-center gap-2 h-7 mb-8">
+            <div className="animate-fade-up-1 flex items-center gap-2 h-7 mb-6">
               <span className="font-mono text-sm text-[#d4a853]">/</span>
               <span className="font-mono text-sm text-[#a89070]">{displayed}</span>
               <span className="inline-block w-[2px] h-4 bg-[#d4a853] animate-pulse" />
             </div>
-            <p className="animate-fade-up-2 text-[15px] text-[#6e6b64] leading-[1.85] mb-10 max-w-[480px]">
+            <p className="animate-fade-up-2 text-[14px] md:text-[15px] text-[#6e6b64] leading-[1.85] mb-8">
               Software developer focused on the intersection of{" "}
               <span className="text-[#f0ede6] font-medium">full-stack architecture</span> and{" "}
               <span className="text-[#f0ede6] font-medium">advanced LLM agents</span>, transforming complex operational logic into scalable, secure, production-ready software.
@@ -394,18 +394,15 @@ export default function SinglePage() {
               {contactLinks.map(({ href, label, target, icon }) => (
                 <a key={label} href={href} target={target} rel={target ? "noopener noreferrer" : undefined}
                   aria-label={label}
-                  className="group relative flex items-center justify-center w-12 h-12 border border-white/[0.12] rounded-sm text-[#5a5850] transition-all duration-200 hover:border-[#d4a853] hover:text-[#d4a853] hover:bg-[rgba(212,168,83,0.08)] hover:-translate-y-0.5">
+                  className="group relative flex items-center justify-center w-11 h-11 md:w-12 md:h-12 border border-white/[0.12] rounded-sm text-[#5a5850] transition-all duration-200 hover:border-[#d4a853] hover:text-[#d4a853] hover:bg-[rgba(212,168,83,0.08)]">
                   {icon}
-                  <span className="pointer-events-none absolute bottom-[calc(100%+8px)] left-1/2 -translate-x-1/2 font-mono text-[10px] text-[#e8e6e0] bg-[#1a1a24] border border-white/[0.14] px-2 py-1 rounded-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    {label}
-                  </span>
                 </a>
               ))}
             </div>
           </div>
 
-          {/* RIGHT: neural network */}
-          <div className="animate-fade-up-2 h-[480px]">
+          {/* RIGHT: neural network — hidden on mobile */}
+          <div className="hidden md:block animate-fade-up-2 h-[480px]">
             <NeuralNetwork />
           </div>
 
@@ -413,12 +410,34 @@ export default function SinglePage() {
       </section>
 
       {/* ══════════════ ABOUT ══════════════ */}
-      <section id="about" className="relative z-10 py-32 px-16">
+      <section id="about" className="relative z-10 py-20 md:py-32 px-6 md:px-16">
         <div className="max-w-[1080px] mx-auto">
           <p className="reveal font-mono text-[11px] text-[#d4a853] tracking-[0.16em] uppercase mb-3 flex items-center gap-2 after:content-[''] after:block after:w-10 after:h-px after:bg-white/20">Who I am</p>
-          <h2 className="reveal font-serif text-[clamp(2rem,4vw,3.5rem)] text-[#f0ede6] leading-[1.1] mb-16">About Me</h2>
+          <h2 className="reveal font-serif text-[clamp(2rem,4vw,3.5rem)] text-[#f0ede6] leading-[1.1] mb-10 md:mb-16">About Me</h2>
 
-          <div className="grid grid-cols-[1fr_300px] gap-20 items-start">
+          {/* photo — shown on mobile above text */}
+          <div className="reveal flex flex-col items-center gap-4 mb-10 md:hidden">
+            <div className="relative">
+              <div className="absolute inset-0 rounded-full blur-2xl opacity-25"
+                style={{ background: "radial-gradient(circle, rgba(212,168,83,0.6) 0%, transparent 70%)" }} />
+              <div className="relative w-[200px] h-[200px] rounded-full overflow-hidden"
+                style={{ border: "2px solid rgba(212,168,83,0.6)", boxShadow: "0 0 40px rgba(212,168,83,0.15)" }}>
+                <img src="/photo.png" alt="Omer Zaadi"
+                  className="absolute w-[170%] max-w-none"
+                  style={{ top: "-8%", left: "-35%" }} />
+              </div>
+            </div>
+            <div className="text-center">
+              <p className="font-serif text-[1rem] text-[#f0ede6]">{name}</p>
+              <p className="font-mono text-[11px] text-[#d4a853] tracking-[0.1em] mt-1">Software Developer</p>
+            </div>
+            <div className="px-4 py-2 border border-white/[0.07] rounded-sm bg-[#0d0d14] text-center">
+              <span className="inline-block w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse" />
+              <span className="text-[12px] text-[#6e6b64]">Open to opportunities</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-10 md:gap-20 items-start">
             <div>
               <p className="reveal text-[16px] text-[#7a7870] leading-[2] mb-0" style={{ letterSpacing: "0.01em" }}>
                 I am a{" "}
@@ -454,7 +473,7 @@ export default function SinglePage() {
                   Technical Skills
                 </p>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
                     {
                       category: "AI & Data",
@@ -542,8 +561,8 @@ export default function SinglePage() {
               </div>
             </div>
 
-            {/* circular photo */}
-            <div className="reveal sticky top-28 flex flex-col items-center gap-5">
+            {/* circular photo — desktop only */}
+            <div className="reveal sticky top-28 flex-col items-center gap-5 hidden md:flex">
               <div className="relative">
                 <div className="absolute inset-0 rounded-full blur-2xl opacity-25"
                   style={{ background: "radial-gradient(circle, rgba(212,168,83,0.6) 0%, transparent 70%)" }} />
@@ -568,30 +587,47 @@ export default function SinglePage() {
       </section>
 
       {/* ══════════════ PROJECTS ══════════════ */}
-      <section id="projects" className="relative z-10 py-32 px-16">
+      <section id="projects" className="relative z-10 py-20 md:py-32 px-6 md:px-16">
         <div className="max-w-[1080px] mx-auto">
           <p className="reveal font-mono text-[11px] text-[#d4a853] tracking-[0.16em] uppercase mb-3 flex items-center gap-2 after:content-[''] after:block after:w-10 after:h-px after:bg-white/20">Work</p>
-          <h2 className="reveal font-serif text-[clamp(2rem,4vw,3.5rem)] text-[#f0ede6] leading-[1.1] mb-16">Projects</h2>
-          <div className="flex flex-col gap-[3px]">
+          <h2 className="reveal font-serif text-[clamp(2rem,4vw,3.5rem)] text-[#f0ede6] leading-[1.1] mb-10 md:mb-16">Projects</h2>
+          <div className="flex flex-col gap-4">
             {projects.map((p, i) => (
               <div key={p.number} className={`reveal reveal-delay-${i+1} group bg-[#0d0d14] border border-white/[0.07] rounded-sm overflow-hidden hover:border-[rgba(212,168,83,0.3)] transition-all duration-300`}>
-                <div className="grid grid-cols-[1fr_380px] min-h-[280px]">
-                  <div className="p-8 flex flex-col justify-between border-r border-white/[0.07]">
+                {/* mobile: stacked layout */}
+                <div className="flex flex-col md:grid md:grid-cols-[1fr_380px] md:min-h-[280px]">
+                  {/* image on top for mobile */}
+                  <div className="relative bg-[#111118] overflow-hidden h-[200px] md:hidden md:order-2">
+                    {p.image ? (
+                      <img src={p.image} alt={p.title} className="w-full h-full object-cover object-top" />
+                    ) : (
+                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6">
+                        <div className="w-10 h-10 border border-[rgba(212,168,83,0.3)] rounded-full flex items-center justify-center">
+                          <svg className="w-4 h-4 text-[#d4a853]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <span className="font-mono text-[11px] text-[#d4a853] bg-[rgba(212,168,83,0.1)] border border-[rgba(212,168,83,0.2)] px-3 py-1 rounded-sm">Coming Soon</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="p-6 md:p-8 flex flex-col justify-between md:border-r border-white/[0.07]">
                     <div>
-                      <p className="font-mono text-[11px] text-[#5a5850] mb-3">{p.number}</p>
-                      <h3 className="font-serif text-[1.7rem] text-[#f0ede6] leading-[1.2] mb-3">{p.title}</h3>
-                      <p className="text-[13.5px] text-[#6e6b64] leading-[1.8] mb-5">{p.description}</p>
+                      <p className="font-mono text-[11px] text-[#5a5850] mb-2">{p.number}</p>
+                      <h3 className="font-serif text-[1.4rem] md:text-[1.7rem] text-[#f0ede6] leading-[1.2] mb-3">{p.title}</h3>
+                      <p className="text-[13px] md:text-[13.5px] text-[#6e6b64] leading-[1.8] mb-4">{p.description}</p>
                       <div className="flex flex-wrap gap-1.5">
                         {p.tags.map(t => <span key={t} className="font-mono text-[11px] px-2.5 py-1 bg-[#1a1a24] border border-white/[0.1] rounded-sm text-[rgba(212,168,83,0.7)]">{t}</span>)}
                       </div>
                     </div>
                     <a href={p.github} target="_blank" rel="noopener noreferrer"
-                      className="mt-6 inline-flex items-center gap-2 self-start font-mono text-[12px] text-[#d4a853] border border-[rgba(212,168,83,0.3)] px-5 py-2.5 rounded-sm transition-all duration-200 hover:bg-[rgba(212,168,83,0.1)] hover:border-[#d4a853]">
+                      className="mt-5 inline-flex items-center gap-2 self-start font-mono text-[12px] text-[#d4a853] border border-[rgba(212,168,83,0.3)] px-4 py-2 rounded-sm transition-all duration-200 hover:bg-[rgba(212,168,83,0.1)] hover:border-[#d4a853]">
                       View on GitHub
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                     </a>
                   </div>
-                  <div className="relative bg-[#111118] overflow-hidden">
+
+                  {/* image on right for desktop */}
+                  <div className="relative bg-[#111118] overflow-hidden hidden md:block">
                     {p.image ? (
                       <img src={p.image} alt={p.title} className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
                     ) : (
@@ -612,63 +648,29 @@ export default function SinglePage() {
       </section>
 
       {/* ══════════════ RESUME ══════════════ */}
-      <section id="resume" className="relative z-10 py-32 px-16">
+      <section id="resume" className="relative z-10 py-20 md:py-32 px-6 md:px-16">
         <div className="max-w-[900px] mx-auto">
 
-          {/* header row */}
-          <div className="reveal flex items-end justify-between mb-12">
+          <div className="reveal flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-10 md:mb-12">
             <div>
-              <p className="font-mono text-[11px] text-[#d4a853] tracking-[0.16em] uppercase mb-3 flex items-center gap-2 after:content-[''] after:block after:w-10 after:h-px after:bg-white/20">
-                Background
-              </p>
-              <h2 className="font-serif text-[clamp(2rem,4vw,3.5rem)] text-[#f0ede6] leading-[1.1]">
-                Résumé
-              </h2>
+              <p className="font-mono text-[11px] text-[#d4a853] tracking-[0.16em] uppercase mb-3 flex items-center gap-2 after:content-[''] after:block after:w-10 after:h-px after:bg-white/20">Background</p>
+              <h2 className="font-serif text-[clamp(2rem,4vw,3.5rem)] text-[#f0ede6] leading-[1.1]">Résumé</h2>
             </div>
-
-            {/* download button */}
-            <a
-              href="/CV_Omer_Zaadi.pdf"
-              download
-              className="group flex items-center gap-3 font-mono text-[13px] tracking-[0.06em] px-7 py-3.5 rounded-sm transition-all duration-300"
-              style={{
-                color: "#d4a853",
-                border: "1px solid rgba(212,168,83,0.4)",
-                background: "rgba(212,168,83,0.04)",
-              }}
-              onMouseEnter={e => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.background = "rgba(212,168,83,0.12)";
-                el.style.border = "1px solid rgba(212,168,83,0.75)";
-                el.style.boxShadow = "0 0 24px rgba(212,168,83,0.18), 0 0 8px rgba(212,168,83,0.1)";
-                el.style.transform = "translateY(-2px)";
-              }}
-              onMouseLeave={e => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.background = "rgba(212,168,83,0.04)";
-                el.style.border = "1px solid rgba(212,168,83,0.4)";
-                el.style.boxShadow = "none";
-                el.style.transform = "translateY(0)";
-              }}
+            <a href="/CV_Omer_Zaadi.pdf" download
+              className="flex items-center gap-2 font-mono text-[12px] tracking-[0.06em] px-5 py-3 rounded-sm self-start sm:self-auto transition-all duration-300"
+              style={{ color: "#d4a853", border: "1px solid rgba(212,168,83,0.4)", background: "rgba(212,168,83,0.04)" }}
+              onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = "rgba(212,168,83,0.12)"; el.style.boxShadow = "0 0 20px rgba(212,168,83,0.15)"; }}
+              onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = "rgba(212,168,83,0.04)"; el.style.boxShadow = "none"; }}
             >
-              <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="7 10 12 15 17 10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
-              </svg>
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Download Resume (PDF)
             </a>
           </div>
 
           {/* PDF viewer */}
           <div className="reveal reveal-delay-1 relative rounded-md overflow-hidden"
-            style={{
-              border: "1px solid rgba(212,168,83,0.12)",
-              boxShadow: "0 0 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(212,168,83,0.05)",
-            }}>
-
-            {/* top bar mimicking a browser/viewer chrome */}
-            <div className="flex items-center justify-between px-5 py-3"
+            style={{ border: "1px solid rgba(212,168,83,0.12)", boxShadow: "0 0 60px rgba(0,0,0,0.5)" }}>
+            <div className="flex items-center justify-between px-4 py-3"
               style={{ background: "rgba(212,168,83,0.04)", borderBottom: "1px solid rgba(212,168,83,0.08)" }}>
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
@@ -677,24 +679,16 @@ export default function SinglePage() {
               </div>
               <span className="font-mono text-[11px] text-[#5a5850] tracking-wider">CV_Omer_Zaadi.pdf</span>
               <a href="/CV_Omer_Zaadi.pdf" target="_blank" rel="noopener noreferrer"
-                className="font-mono text-[10px] text-[#d4a853] tracking-[0.08em] opacity-60 hover:opacity-100 transition-opacity flex items-center gap-1.5">
+                className="font-mono text-[10px] text-[#d4a853] opacity-60 hover:opacity-100 transition-opacity flex items-center gap-1.5">
                 <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Open in new tab
+                <span className="hidden sm:inline">Open in new tab</span>
               </a>
             </div>
-
-            {/* iframe embed */}
             <iframe
               src="/CV_Omer_Zaadi.pdf"
               title="Omer Zaadi — Resume"
               className="w-full"
-              style={{
-                height: "82vh",
-                minHeight: "600px",
-                background: "#0d0d14",
-                border: "none",
-                display: "block",
-              }}
+              style={{ height: "75vh", minHeight: "500px", background: "#0d0d14", border: "none", display: "block" }}
             />
           </div>
 
@@ -702,28 +696,28 @@ export default function SinglePage() {
       </section>
 
       {/* ══════════════ CONTACT ══════════════ */}
-      <section id="contact" className="relative z-10 py-32 px-16">
+      <section id="contact" className="relative z-10 py-20 md:py-32 px-6 md:px-16">
         <div className="max-w-[1080px] mx-auto">
           <p className="reveal font-mono text-[11px] text-[#d4a853] tracking-[0.16em] uppercase mb-3 flex items-center gap-2 after:content-[''] after:block after:w-10 after:h-px after:bg-white/20">Reach out</p>
-          <h2 className="reveal font-serif text-[clamp(2rem,4vw,3.5rem)] text-[#f0ede6] leading-[1.1] mb-5">Let&apos;s Connect</h2>
-          <p className="reveal text-[15px] text-[#6e6b64] max-w-[480px] leading-[1.8] mb-16">
+          <h2 className="reveal font-serif text-[clamp(2rem,4vw,3.5rem)] text-[#f0ede6] leading-[1.1] mb-4">Let&apos;s Connect</h2>
+          <p className="reveal text-[14px] md:text-[15px] text-[#6e6b64] max-w-[480px] leading-[1.8] mb-10 md:mb-16">
             Open to new opportunities, collaborations, or just a good conversation about software and AI.
           </p>
-          <div className="grid grid-cols-2 gap-[3px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {contactLinks.map((cl, i) => (
               <a key={cl.label} href={cl.href} target={cl.target} rel={cl.target?"noopener noreferrer":undefined}
-                className={`reveal reveal-delay-${i+1} group flex items-center gap-5 bg-[#0d0d14] border border-white/[0.07] p-7 rounded-sm hover:bg-[#111118] hover:border-[rgba(212,168,83,0.3)] hover:-translate-y-0.5 transition-all duration-200`}>
-                <span className="flex items-center justify-center w-12 h-12 border border-white/[0.1] rounded-sm text-[#5a5850] group-hover:border-[#d4a853] group-hover:text-[#d4a853] transition-all">{cl.icon}</span>
-                <div>
+                className={`reveal reveal-delay-${i+1} group flex items-center gap-4 bg-[#0d0d14] border border-white/[0.07] p-5 md:p-7 rounded-sm hover:bg-[#111118] hover:border-[rgba(212,168,83,0.3)] transition-all duration-200`}>
+                <span className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 border border-white/[0.1] rounded-sm text-[#5a5850] group-hover:border-[#d4a853] group-hover:text-[#d4a853] transition-all shrink-0">{cl.icon}</span>
+                <div className="min-w-0">
                   <p className="font-mono text-[10px] text-[#5a5850] tracking-[0.1em] uppercase mb-1 group-hover:text-[#d4a853] transition-colors">{cl.label}</p>
-                  <p className="text-[14px] text-[#e8e6e0]">{cl.value}</p>
+                  <p className="text-[13px] md:text-[14px] text-[#e8e6e0] truncate">{cl.value}</p>
                 </div>
-                <svg className="w-4 h-4 text-[#5a5850] ml-auto opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg className="w-4 h-4 text-[#5a5850] ml-auto opacity-0 group-hover:opacity-100 transition-all duration-200 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
             ))}
           </div>
-          <div className="mt-24 pt-8 border-t border-white/[0.07] flex items-center justify-between">
-            <p className="font-mono text-[11px] text-[#3a3830]">© 2026 Omer Zaadi</p>
+          <div className="mt-16 pt-8 border-t border-white/[0.07] flex flex-col sm:flex-row items-center justify-between gap-2">
+            <p className="font-mono text-[11px] text-[#3a3830]">© 2025 Omer Zaadi</p>
             <p className="font-mono text-[11px] text-[#3a3830]">Built with Next.js · Deployed on Vercel</p>
           </div>
         </div>
